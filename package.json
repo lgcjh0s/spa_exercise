@@ -9,6 +9,9 @@
     "react-router-dom": "^6.2.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.22.15",
+    "@babel/core": "^7.22.17",
+    "@babel/preset-env": "^7.22.15",
     "@types/react": "^19.0.6",
     "@types/react-dom": "^19.0.3",
     "typescript": "^5.7.3"
