@@ -1,8 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { IApprData } from "../interface/layout.interface";
 
 const List = () => {
 
-    const [apprData, setApprData] = useState<IApprData>
+    const [apprData, setApprData] = useState<IApprData>();
 
     useEffect(() => {
 
