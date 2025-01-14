@@ -6,8 +6,8 @@ module.exports = {
         main: ['./dist/main.js']
     },
     output: {
-        path: path.resolve(__dirname, '../lottoApp/service/js'),
-        filename: 'mbti_service.js'
+        path: path.resolve(__dirname, '../server_nest/service/scripts'),
+        filename: 'spa.js'
     },
     module: {
         rules: [{
