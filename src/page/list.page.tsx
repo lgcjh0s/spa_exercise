@@ -18,4 +18,21 @@ const List = () => {
     )
 };
 
+const ApprRow = (apprData: IApprData) => {
+
+    return <li>
+        <div className="row_item">
+            <dl>
+                <dt>
+                    <a>{ apprData.franNm }</a>
+                </dt>
+                <dd>
+                    <span className="data">{ apprData.apprDt } {apprData.apprTm }</span>
+                    <span></span>
+                </dd>
+            </dl>
+        </div>
+    </li>
+}
+
 export default List;
