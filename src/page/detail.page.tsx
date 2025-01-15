@@ -1,9 +1,18 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { IApprData } from "../interface/layout.interface";
 
 const Detail = () => {
 
     const navigate = useNavigate();
+    const [apprData, setApprData] = useState<IApprData>();
 
+
+    const getApprData = async () => {
+        const api: string = '/spa/apprList';
+        //const apprList: IApprData[] = await http.doPost(api);
+        //setApprData(apprList);
+    };
 
     const moveList = () => {
         navigate('/spa/S00001');
