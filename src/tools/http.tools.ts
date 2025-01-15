@@ -1,14 +1,12 @@
-import { IRespData } from "../interface/layout.interface";
-
 const Http = () => {
-    const doGet = async (url: string, data: string = ''): Promise<IRespData<any>> => {
+    const doGet = async (url: string, data: string = ''): Promise<any> => {
         const resp: Response = await fetch(url + '?' + data, {
             method: 'GET'
         });
         return resp.json();
     }
 
-    const doPost = async (url: string, data: any = {}): Promise<IRespData<any>> => {
+    const doPost = async (url: string, data: any = {}): Promise<any> => {
         const resp: Response = await fetch(url, {
             method: 'POST',
             headers: {

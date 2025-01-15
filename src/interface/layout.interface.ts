@@ -16,13 +16,6 @@ interface IApprData {
     serviceAmt: number;
 }
 
-interface IRespData<T> {
-    data: T;
-    statusCode: number;
-    statusMsg: string;
-}
-
 export {
-    IApprData,
-    IRespData
+    IApprData
 }
