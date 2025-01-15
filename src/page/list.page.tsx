@@ -2,11 +2,14 @@ import { useEffect, useState } from "react";
 import { IApprData } from "../interface/layout.interface";
 import { http } from "../tools/http.tools";
 import { useNavigate } from "react-router-dom";
+import { stateApprNo } from "../component/atom.component";
+import { useAtom } from "jotai";
 
 const List = () => {
 
-    const [apprData, setApprData] = useState<IApprData[]>();
     const navigate = useNavigate();
+    const [apprData, setApprData] = useState<IApprData[]>();
+    const [, setStateApprNo] = useAtom(stateApprNo);
 
     useEffect(() => {
         getApprList();
@@ -18,7 +21,8 @@ const List = () => {
         setApprData(apprList);
     };
 
-    const moveDetail = () => {
+    const moveDetail = (apprNo: number) => {
+        setStateApprNo(apprNo);
         navigate('/spa/S00002');
     }
 
@@ -32,7 +36,7 @@ const List = () => {
                         <div className="row_item">
                             <dl>
                                 <dt>
-                                    <span onClick={ moveDetail }>{ row.franNm }</span>
+                                    <span onClick={ () => moveDetail(row.apprNo) }>{ row.franNm }</span>
                                 </dt>
                                 <dd>
                                     <span className="date">{ row.apprDt + ' ' + row.apprTm }</span>
