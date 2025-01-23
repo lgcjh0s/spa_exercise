@@ -16,6 +16,12 @@ interface IApprData {
     serviceAmt: number;
 }
 
+interface IToken {
+    accessToken: string;
+    refreshToken: string;
+}
+
 export {
-    IApprData
+    IApprData,
+    IToken
 }

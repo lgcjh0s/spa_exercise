@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { IApprData } from "../interface/layout.interface";
+import { IApprData, IToken } from "../interface/layout.interface";
 import { http } from "../tools/http.tools";
 import { useNavigate } from "react-router-dom";
 import { stateApprNo } from "../component/atom.component";
@@ -12,8 +12,18 @@ const List = () => {
     const [, setStateApprNo] = useAtom(stateApprNo);
 
     useEffect(() => {
+        login();
         getApprList();
     }, []);
+
+    const login = async () => {
+        const api: string = '/auth/login';
+        const token: IToken = await http.doPost(api, {
+            userId: '1111',
+            password: '2222'
+        });
+
+    };
 
     const getApprList = async () => {
         const api: string = '/spa/apprList';
